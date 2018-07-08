@@ -12,10 +12,10 @@ function mostrar()
 	descuento = parseInt(descuento);
 	descuentoEnDinero = (precio * descuento) / 100;
 	precioConDescuento = precio - descuentoEnDinero;
-	iva = precioConDescuento * 1.21;
-	elPrecioFinal = 
-	alert("Su descuento es de " + descuentoEnDinero + " .Su precio con descuento es de " + precioConDescuento
-		+ " .El precio con IVA es de " + iva);
-	document.getElementById('elPrecioFinal')
+	iva = (precioConDescuento * 21) / 100;
+	precioFinal = (precioConDescuento + iva);
+	alert("Su descuento es de " + descuentoEnDinero + " .Su precio con descuento es de " + precioConDescuento + " .El importe del IVA es de " + iva);
+	document.getElementById('elPrecioFinal').value = precioFinal;
+
 
 }
