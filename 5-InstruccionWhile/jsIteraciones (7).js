@@ -9,7 +9,7 @@ function mostrar()
 	var promedio;
 	
 
-	while (respuesta == "si") 
+	/*while (respuesta == "si") 
 	{
 		numero = prompt("Ingrese un numero");
 		numero = parseInt(numero);
@@ -21,10 +21,21 @@ function mostrar()
 
 	promedio = acumulador / contador;
 
+*/
 
 
+while (respuesta != "n") {
+	contador ++;
+	numero = prompt("Ingrese numero #"+contador);
+	numero = parseInt(numero);
+	acumulador = acumulador + numero;
+	respuesta = prompt("Desea continuar ingresando numeros?");
+}
+	
+	promedio = acumulador / contador;
 
-document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=promedio;
+
+document.getElementById('suma').value="la suma es "+acumulador;
+document.getElementById('promedio').value="el promedio es "+promedio; 
 
 }//FIN DE LA FUNCIÓN
