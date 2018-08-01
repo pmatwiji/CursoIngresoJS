@@ -29,10 +29,15 @@ function mostrar()
 	var cantidadMenoresDeEdad = 1;
 	var contadorMujeres = 1;
 	var contadorHombres = 1;
+	var mayor;
+	var menor;
+	var nombreMayor;
+	var nombreMenor;
 
 	//validacion
 
-	while (contador < 4) {
+	while (contador < 4)
+	{
 		nombre = prompt("Ingrese el nombre");
 		sexo = prompt("Ingrese el sexo. (F o M)");
 		sexo = sexo.toLowerCase();
@@ -43,10 +48,15 @@ function mostrar()
 			}
 		edad = prompt("Ingrese la edad");
 		edad = parseInt(edad);
-			while (edad < 0 || edad > 100) 
+			while (edad < 0 || edad > 101) 
 			{
 				edad = prompt("Ingrese una edad valida");
 				edad = parseInt(edad);
+			}
+			if (contador == 1) 
+			{
+				mayor=edad;
+				menor=edad;
 			}
 		contador++
 	}
@@ -61,9 +71,35 @@ function mostrar()
 
 	if (sexo == "f"){
 		contadorMujeres++;
-	} else if (sexo == "m") {
+	} else {
 		contadorHombres++;
 	}
+
+	//mayor y menor
+
+	if (edad<menor) {
+		menor=edad;
+		nombreMenor=nombre;
+		console.log(nombreMenor);
+	}
+	
+	if (edad>mayor) {
+		mayor=edad
+		nombreMayor=nombre;
+		console.log(nombreMayor);
+	}
+
+	//nombre mayor y menor
+
+/*	if (edad == mayor) {
+		nombreMayor = nombre;
+	} else if (edad == menor) {
+		nombreMenor = nombre;
+	} */
+
+	
+	
+
 
 
 	document.write("La cantidad de mayores de edad es de " + cantidadMayoresDeEdad);
